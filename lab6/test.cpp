@@ -1,4 +1,11 @@
 #include "test.h"
+test::test()
+{
+}
+test::~test()
+{
+}
+
 void test::test1()
 {
   Queue test;
@@ -76,19 +83,33 @@ void test::test5()
   if (test.peekFront()==1)
   {
     std::cout << "Test 7: Enqueing values in order: PASSED" << '\n';
-    test.dequeue();
-    if (test.peekFront()==2)
-    {
-      std::cout << "Test 8: Dequeing values in order: PASSED" << '\n';
-    }
-    else
-    {
-      std::cout << "Test 8: Dequeing values in order: FAILED" << '\n';
-    }
   }
   else
   {
     std::cout << "Test 7: Enqueing values in order: FAILED" << '\n';
+  }
+  test.dequeue();
+  if (test.peekFront()==2)
+  {
+    std::cout << "Test 8: Dequeing values in order: PASSED" << '\n';
+  }
+  else
+  {
+    std::cout << "Test 8: Dequeing values in order: FAILED" << '\n';
+  }
+}
+void test::test6()
+{
+  Queue test;
+  test.enqueue(1);
+  test.enqueue(2);
+  if (test.peekFront()==1)
+  {
+    std::cout << "Test 9: peek values in order: PASSED" << '\n';
+  }
+  else
+  {
+    std::cout << "Test 9: peek values in order: FAILED" << '\n';
   }
 }
 void test::run()
@@ -98,4 +119,5 @@ void test::run()
   test3();
   test4();
   test5();
+  test6();
 }

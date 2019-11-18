@@ -1,0 +1,3 @@
+1 enqueue is error ,it can't enqueing in order
+2 peekFront and dequeue just work successful when just one value. because of enqueue error, can't check peekfornt and dequeue
+3 it's have memory leak
